@@ -4,9 +4,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script src="index.ts">
-    //insert code from tutorial here
-  </script>
+
   <h1>Dynamic SVG - Demo</h1>
 
   <table>
@@ -47,5 +45,29 @@
     </ul>
   </div>
 
+  <script>
+    function changeData() {
+        console.log("onChange works!")
+        let year = document.getElementById("year_select").value;
+        console.log(year);
+
+        data={
+             "2020": [120, 120],
+             "2021": [110, 130],
+             "2022": [100, 140],
+             "2023": [90, 150]
+           }
+
+        let newData = data[year]; //the dropdown value is used as the key
+        document.getElementById("bar1").setAttribute("height", newData[0])
+        document.getElementById("bar1").setAttribute("y", 180-newData[0])
+        document.getElementById("bar2").setAttribute("height", newData[1])
+        document.getElementById("bar2").setAttribute("y", 180-newData[1])
+    }
+
+
+
+    //insert code from tutorial here
+  </script>
 </body>
 </html>
